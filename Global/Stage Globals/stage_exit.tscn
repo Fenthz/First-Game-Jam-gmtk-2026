@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://eayp0f053q1n"]
+
+[ext_resource type="Script" uid="uid://di0qqif51n87o" path="res://Global/Stage Globals/stage_exit.gd" id="1_o1xyb"]
+[ext_resource type="Texture2D" uid="uid://bcl0ibqm4dd0e" path="res://Assets/Finish.png" id="2_jjpqw"]
+[ext_resource type="AudioStream" uid="uid://c8s3nsowb6gjf" path="res://Assets/Audio/543183__garuda1982__plop-sound-effect.wav" id="3_oaiq4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpwk0"]
+size = Vector2(33.5, 29.5)
+
+[node name="StageExit" type="Area2D"]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("1_o1xyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_gpwk0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jjpqw")
+
+[node name="StageExitSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_oaiq4")
+volume_db = 3.714
+pitch_scale = 2.47

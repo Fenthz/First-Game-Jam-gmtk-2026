@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfbh5wthownuf"]
+
+[ext_resource type="Script" uid="uid://f5ntphjs6c1m" path="res://Entity/Stage Entity/spike_hazard.gd" id="1_rinx0"]
+[ext_resource type="Texture2D" uid="uid://bwyrh31ial6jo" path="res://Assets/SpikeHazard.png" id="2_yoh2b"]
+
+[node name="SpikeHazard" type="Area2D"]
+collision_layer = 32
+collision_mask = 4
+script = ExtResource("1_rinx0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8125, 0.6875)
+texture = ExtResource("2_yoh2b")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, -6)
+scale = Vector2(1.298, 1.24316)
+polygon = PackedVector2Array(-9, 6, -11, 8, -11, 14, 9, 14, 9, 8, 7, 6, 1, 6, -4, 6)

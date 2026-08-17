@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8tu5a8qx5loe"]
+
+[ext_resource type="AudioStream" uid="uid://dxxvuvkm8nsl3" path="res://Assets/Audio/586838__migfus20__background-music.mp3" id="1_qrrje"]
+[ext_resource type="Script" uid="uid://b2k41xlcr7e8q" path="res://Global/music_manager.gd" id="2_ydacc"]
+
+[node name="MusicManager" type="AudioStreamPlayer"]
+stream = ExtResource("1_qrrje")
+volume_db = -23.525
+autoplay = true
+script = ExtResource("2_ydacc")

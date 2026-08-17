@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=4 uid="uid://csi3adwu478y3"]
+
+[ext_resource type="Texture2D" uid="uid://cw1npd1263e8s" path="res://Assets/TestStageFloor.png" id="1_pp5bc"]
+[ext_resource type="PackedScene" uid="uid://cxmapedtw2d6y" path="res://Entity/Player Entity/player_character.tscn" id="2_hcsnb"]
+[ext_resource type="PackedScene" uid="uid://c55jc1lefmoix" path="res://Global/level_timer.tscn" id="3_jyuup"]
+[ext_resource type="PackedScene" uid="uid://cbd3ibpo1mslu" path="res://Global/timer_ui.tscn" id="3_of74b"]
+[ext_resource type="PackedScene" uid="uid://d4d5odg8k6kg2" path="res://Entity/Stage Entity/Torch.tscn" id="5_q1huv"]
+[ext_resource type="PackedScene" uid="uid://xrngnwocicew" path="res://game_over_ui.tscn" id="6_efwsq"]
+[ext_resource type="PackedScene" uid="uid://eayp0f053q1n" path="res://Global/Stage Globals/stage_exit.tscn" id="7_uqdjq"]
+[ext_resource type="PackedScene" uid="uid://cfbh5wthownuf" path="res://Entity/Stage Entity/spike_hazard.tscn" id="8_1a5ga"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hcsnb"]
+resource_name = "Floor"
+texture = ExtResource("1_pp5bc")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.5, 8, 5.5, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.5, 8, 5.5, 8, 8, -8, 8)
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_of74b"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_hcsnb")
+
+[node name="TestSpace" type="Node2D"]
+
+[node name="TileMapLayerFloor" type="TileMapLayer" parent="."]
+position = Vector2(0, 34.86)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAAAAAQAAAAAAAAAAAAAAAUAAAAAAAEAAAABAAQAAAABAAAAAAABAAUAAAABAAEAAAACAAQAAAAAAAAAAAACAAUAAAAAAAEAAAADAAQAAAABAAAAAAADAAUAAAABAAEAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAEAAAAFAAQAAAABAAAAAAAFAAUAAAABAAEAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAEAAAAHAAQAAAABAAAAAAAHAAUAAAABAAEAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAEAAAAJAAQAAAABAAAAAAAJAAUAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_of74b")
+collision_visibility_mode = 1
+
+[node name="TileMapLayerWall" type="TileMapLayer" parent="."]
+z_index = 1
+position = Vector2(0, 34.86)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAAJAAQAAAAAAAAAAGAJAAMAAAABAAAAAGAKAAQAAAAAAAEAAGAKAAMAAAABAAEAAGAJAAIAAAAAAAAAAGAJAAEAAAABAAAAAGAKAAIAAAAAAAEAAGAKAAEAAAABAAEAAGAJAAAAAAAAAAAAAGAJAP//AAABAAAAAGAKAAAAAAAAAAEAAGAKAP//AAABAAEAAGAFAAMAAAABAAAAAAAFAAQAAAABAAEAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAEAAAAHAAMAAAABAAAAAAAHAAQAAAABAAEAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_of74b")
+collision_visibility_mode = 1
+
+[node name="LevelTimer" parent="." instance=ExtResource("3_jyuup")]
+max_time = 70.0
+starting_time = 80.0
+
+[node name="TimerUI" parent="LevelTimer" instance=ExtResource("3_of74b")]
+
+[node name="Torch" parent="." instance=ExtResource("5_q1huv")]
+position = Vector2(331.33, 261.458)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="GameOverUI" parent="." instance=ExtResource("6_efwsq")]
+
+[node name="StageExit" parent="." instance=ExtResource("7_uqdjq")]
+position = Vector2(402.343, 266.789)
+next_stage_scene = "uid://bxvi681gyebfu"
+
+[node name="SpikeHazard" parent="." instance=ExtResource("8_1a5ga")]
+position = Vector2(33.6618, 318.517)
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_hcsnb")]
+position = Vector2(466.933, 214.839)

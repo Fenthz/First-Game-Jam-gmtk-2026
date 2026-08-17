@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4d5odg8k6kg2"]
+
+[ext_resource type="Script" uid="uid://con4fh4po6sm5" path="res://Entity/Stage Entity/Torch.gd" id="1_jt5x3"]
+[ext_resource type="Texture2D" uid="uid://demm8imd0qtwd" path="res://Assets/Torch.png" id="1_ytb52"]
+[ext_resource type="AudioStream" uid="uid://bc65i08f55m7s" path="res://Assets/Audio/708218__bathulile231236__balloon-deflate.wav" id="3_je5hw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_adppt"]
+radius = 11.2411
+height = 32.4941
+
+[sub_resource type="Gradient" id="Gradient_ytb52"]
+offsets = PackedFloat32Array(0, 0.117845, 0.23569, 0.329966, 0.521886, 0.670034, 0.787879, 0.861953, 0.942761)
+colors = PackedColorArray(1, 1, 1, 1, 0.875709, 0.875709, 0.875709, 1, 0.744108, 0.744108, 0.744108, 1, 0.680402, 0.680402, 0.680402, 1, 0.545026, 0.545026, 0.545026, 1, 0.414369, 0.414369, 0.414369, 1, 0.272409, 0.272409, 0.272409, 1, 0.165391, 0.165391, 0.165391, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jt5x3"]
+gradient = SubResource("Gradient_ytb52")
+fill = 1
+fill_from = Vector2(0.504274, 0.495726)
+fill_to = Vector2(0.0299145, 0.0555556)
+
+[node name="Torch" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_jt5x3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ytb52")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_adppt")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.914943, 0.451905, 0.303617, 1)
+energy = 3.0
+texture = SubResource("GradientTexture2D_jt5x3")
+
+[node name="TorchSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_je5hw")
+pitch_scale = 2.22
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

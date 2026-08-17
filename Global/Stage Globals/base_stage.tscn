@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dicn5nols6a0g"]
+
+[ext_resource type="TileSet" uid="uid://cr8dy3e0beux7" path="res://Global/Stage Globals/MainTileSet.tres" id="1_ro2jy"]
+
+[node name="BaseStage" type="Node2D"]
+
+[node name="GroundLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_ro2jy")
+
+[node name="IceLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_ro2jy")
+rendering_quadrant_size = 32
+
+[node name="HazardLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_ro2jy")
+
+[node name="WallLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_ro2jy")

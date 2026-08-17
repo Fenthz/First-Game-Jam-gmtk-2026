@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=4 uid="uid://csdhn0tseqeol"]
+
+[ext_resource type="PackedScene" uid="uid://dicn5nols6a0g" path="res://Global/Stage Globals/base_stage.tscn" id="1_cgepa"]
+[ext_resource type="PackedScene" uid="uid://cfbh5wthownuf" path="res://Entity/Stage Entity/spike_hazard.tscn" id="2_h5aeh"]
+[ext_resource type="PackedScene" uid="uid://by0gm5voo034x" path="res://Assets/Stage Background/background.tscn" id="3_521qj"]
+[ext_resource type="PackedScene" uid="uid://cxmapedtw2d6y" path="res://Entity/Player Entity/player_character.tscn" id="4_enjgd"]
+[ext_resource type="PackedScene" uid="uid://c55jc1lefmoix" path="res://Global/level_timer.tscn" id="5_rqyi1"]
+[ext_resource type="PackedScene" uid="uid://cbd3ibpo1mslu" path="res://Global/timer_ui.tscn" id="6_kvsg0"]
+[ext_resource type="PackedScene" uid="uid://xrngnwocicew" path="res://game_over_ui.tscn" id="7_kvsg0"]
+[ext_resource type="PackedScene" uid="uid://eayp0f053q1n" path="res://Global/Stage Globals/stage_exit.tscn" id="8_fxbqm"]
+[ext_resource type="PackedScene" uid="uid://d4d5odg8k6kg2" path="res://Entity/Stage Entity/Torch.tscn" id="9_t1f78"]
+
+[node name="BaseStage" instance=ExtResource("1_cgepa")]
+
+[node name="GroundLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAAAAAEAAwAAAAAAAAABAAEAAwAAAAAAAAAMAAIAAwAAAAAAAAANAAIAAwAAAAAAAAAOAAIAAwAAAAAAAAATAAUAAwAAAAAAAAASAAUAAwAAAAAAAAARAAUAAwAAAAAAAAAPAAgAAwAAAAAAAAAOAAgAAwAAAAAAAAANAAgAAwAAAAAAAAAAAAoAAwAAAAAAAAABAAoAAwAAAAAAAAAAAAAABgAAAAAAAFATAAAABgAAAAAAAGAGAAQAAwAAAAAAAAAHAAQAAwAAAAAAAAA=")
+
+[node name="IceLayer" parent="." index="1"]
+tile_map_data = PackedByteArray("AAADAAMABAAAAAAAAAAEAAMABAAAAAAAAAAHAAEABAAAAAAAAAAGAAEABAAAAAAAAAAIAAUABAAAAAAAAAAJAAUABAAAAAAAAAAKAAUABAAAAAAAAAARAAEABAAAAAAAAAAHAAgABAAAAAAAAAAGAAgABAAAAAAAAAADAAgABAAAAAAAAAACAAgABAAAAAAAAAA=")
+
+[node name="HazardLayer" parent="." index="2"]
+visible = false
+tile_map_data = PackedByteArray("AAAAAAUABQAAAAAAAAABAAUABQAAAAAAAAACAAUABQAAAAAAAAAAAAMABQAAAAAAAAABAAQABQAAAAAAAAABAAYABQAAAAAAAAAAAAcABQAAAAAAAAAEAAUABQAAAAAAAAAFAAUABQAAAAAAAAAGAAUABQAAAAAAAAADAAUABQAAAAAAAAAMAAUABQAAAAAAAAANAAUABQAAAAAAAAAOAAUABQAAAAAAAAAMAAQABQAAAAAAAAAMAAMABQAAAAAAAAAOAAMABQAAAAAAAAAOAAQABQAAAAAAAAANAAMABQAAAAAAAAAIAAIABQAAAAAAAAAJAAMABQAAAAAAAAAJAAIABQAAAAAAAAAJAAEABQAAAAAAAAA=")
+
+[node name="WallLayer" parent="." index="3"]
+tile_map_data = PackedByteArray("AAAAAAoABgAAAAAAAFAAAAkABgAAAAAAAFAAAAgABgAAAAAAAFAAAAcABgAAAAAAAFAAAAYABgAAAAAAAFAAAAUABgAAAAAAAFAAAAQABgAAAAAAAFAAAAMABgAAAAAAAFAAAAIABgAAAAAAAFAAAAEABgAAAAAAAFAAAAAABgAAAAAAADABAAAABgAAAAAAADACAAAABgAAAAAAADADAAAABgAAAAAAADAEAAAABgAAAAAAADAFAAAABgAAAAAAADAGAAAABgAAAAAAADAHAAAABgAAAAAAADAIAAAABgAAAAAAADAJAAAABgAAAAAAADAKAAAABgAAAAAAADALAAAABgAAAAAAADAMAAAABgAAAAAAADANAAAABgAAAAAAADAOAAAABgAAAAAAADAPAAAABgAAAAAAADAQAAAABgAAAAAAADARAAAABgAAAAAAADASAAAABgAAAAAAADATAAAABgAAAAAAADAUAAAABgAAAAAAADATAAEABgAAAAAAAGATAAIABgAAAAAAAGATAAMABgAAAAAAAGATAAQABgAAAAAAAGATAAUABgAAAAAAAGATAAYABgAAAAAAAGATAAcABgAAAAAAAGATAAgABgAAAAAAAGATAAkABgAAAAAAAGATAAoABgAAAAAAAGA=")
+
+[node name="SpikeHazard" parent="." index="4" instance=ExtResource("2_h5aeh")]
+position = Vector2(82.7517, 116.744)
+
+[node name="SpikeHazard2" parent="." index="5" instance=ExtResource("2_h5aeh")]
+position = Vector2(56.5034, 116.937)
+
+[node name="SpikeHazard3" parent="." index="6" instance=ExtResource("2_h5aeh")]
+position = Vector2(31.0408, 117.155)
+
+[node name="SpikeHazard5" parent="." index="7" instance=ExtResource("2_h5aeh")]
+position = Vector2(149.885, 335.036)
+scale = Vector2(7.095, 7.095)
+
+[node name="SpikeHazard6" parent="." index="8" instance=ExtResource("2_h5aeh")]
+position = Vector2(335.665, 335.719)
+rotation = 0.0069742
+scale = Vector2(7.095, 7.095)
+
+[node name="SpikeHazard7" parent="." index="9" instance=ExtResource("2_h5aeh")]
+position = Vector2(518.029, 337.085)
+rotation = 0.0069742
+scale = Vector2(7.095, 7.095)
+
+[node name="SpikeHazard8" parent="." index="10" instance=ExtResource("2_h5aeh")]
+position = Vector2(667.609, 337.768)
+rotation = 0.0069742
+scale = Vector2(7.095, 7.095)
+
+[node name="SpikeHazard4" parent="." index="11" instance=ExtResource("2_h5aeh")]
+position = Vector2(5.57819, 116.937)
+
+[node name="Background" parent="." index="12" instance=ExtResource("3_521qj")]
+
+[node name="PlayerCharacter" parent="." index="13" instance=ExtResource("4_enjgd")]
+position = Vector2(32.7395, 41.2066)
+
+[node name="LevelTimer" parent="." index="14" instance=ExtResource("5_rqyi1")]
+
+[node name="TimerUI" parent="." index="15" instance=ExtResource("6_kvsg0")]
+
+[node name="GameOverUI" parent="." index="16" instance=ExtResource("7_kvsg0")]
+
+[node name="StageExit" parent="." index="17" instance=ExtResource("8_fxbqm")]
+position = Vector2(24.53, 336.781)
+
+[node name="Torch" parent="." index="18" instance=ExtResource("9_t1f78")]
+position = Vector2(223.14, 39.6694)
+
+[node name="Torch2" parent="." index="19" instance=ExtResource("9_t1f78")]
+position = Vector2(557.851, 176.86)
+
+[node name="Torch3" parent="." index="20" instance=ExtResource("9_t1f78")]
+position = Vector2(219.008, 266.116)
+
+[node name="Torch4" parent="." index="21" instance=ExtResource("9_t1f78")]
+position = Vector2(560.331, 38.843)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="22"]
+color = Color(0, 0, 0, 1)

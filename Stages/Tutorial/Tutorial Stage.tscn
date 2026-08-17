@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=4 uid="uid://76w0huu8f8lo"]
+
+[ext_resource type="PackedScene" uid="uid://dicn5nols6a0g" path="res://Global/Stage Globals/base_stage.tscn" id="1_x2cgd"]
+[ext_resource type="PackedScene" uid="uid://d4d5odg8k6kg2" path="res://Entity/Stage Entity/Torch.tscn" id="2_krbm4"]
+[ext_resource type="PackedScene" uid="uid://cxmapedtw2d6y" path="res://Entity/Player Entity/player_character.tscn" id="2_n8bw1"]
+[ext_resource type="PackedScene" uid="uid://by0gm5voo034x" path="res://Assets/Stage Background/background.tscn" id="4_ihrw1"]
+[ext_resource type="PackedScene" uid="uid://eayp0f053q1n" path="res://Global/Stage Globals/stage_exit.tscn" id="5_awxmh"]
+[ext_resource type="PackedScene" uid="uid://cbd3ibpo1mslu" path="res://Global/timer_ui.tscn" id="6_rdmma"]
+[ext_resource type="PackedScene" uid="uid://c55jc1lefmoix" path="res://Global/level_timer.tscn" id="7_pail8"]
+[ext_resource type="PackedScene" uid="uid://xrngnwocicew" path="res://game_over_ui.tscn" id="8_pail8"]
+
+[node name="BaseStage" instance=ExtResource("1_x2cgd")]
+
+[node name="Torch" parent="." index="0" instance=ExtResource("2_krbm4")]
+position = Vector2(519.536, 336.845)
+metadata/_edit_group_ = true
+
+[node name="Torch2" parent="." index="1" instance=ExtResource("2_krbm4")]
+position = Vector2(262.805, 336.665)
+metadata/_edit_group_ = true
+
+[node name="Torch3" parent="." index="2" instance=ExtResource("2_krbm4")]
+position = Vector2(397.633, 335.607)
+metadata/_edit_group_ = true
+
+[node name="Torch4" parent="." index="3" instance=ExtResource("2_krbm4")]
+position = Vector2(125.021, 337.364)
+metadata/_edit_group_ = true
+
+[node name="GroundLayer" parent="." index="4"]
+tile_map_data = PackedByteArray("AAAAAAoAAwAAAAAAAAABAAoAAwAAAAAAAAACAAoAAwAAAAAAAAADAAoAAwAAAAAAAAAEAAoAAwAAAAAAABAFAAoAAwAAAAAAABAGAAoAAwAAAAAAABAHAAoAAwAAAAAAAAAIAAoAAwAAAAAAABAJAAoAAwAAAAAAAAAKAAoAAwAAAAAAAAALAAoAAwAAAAAAAAAMAAoAAwAAAAAAABANAAoAAwAAAAAAABAOAAoAAwAAAAAAAAAPAAoAAwAAAAAAABAQAAoAAwAAAAAAAAARAAoAAwAAAAAAAAASAAoAAwAAAAAAAAATAAoAAwAAAAAAABAAAP//AwAAAAAAAAABAP//AwAAAAAAAAACAP//AwAAAAAAAAADAP//AwAAAAAAABAEAP//AwAAAAAAABAFAP//AwAAAAAAAAAGAP//AwAAAAAAABAHAP//AwAAAAAAABAIAP//AwAAAAAAABAJAP//AwAAAAAAAAAKAP//AwAAAAAAAAALAP//AwAAAAAAABAMAP//AwAAAAAAABANAP//AwAAAAAAAAAOAP//AwAAAAAAAAAPAP//AwAAAAAAAAAQAP//AwAAAAAAAAARAP//AwAAAAAAAAASAP//AwAAAAAAAAATAP//AwAAAAAAABA=")
+
+[node name="WallLayer" parent="." index="7"]
+tile_map_data = PackedByteArray("AAATAAoABgAAAAAAAGATAAkABgAAAAAAAGATAAgABgAAAAAAAGATAAcABgAAAAAAAEATAAYABgAAAAAAAEATAAUABgAAAAAAAEATAAQABgAAAAAAAGATAAMABgAAAAAAAGATAAIABgAAAAAAAGATAAEABgAAAAAAAGATAAAABgAAAAAAAGAAAAYABgAAAAAAAFAAAAUABgAAAAAAAFAAAAQABgAAAAAAAFAAAAMABgAAAAAAAFAAAAIABgAAAAAAAFAAAAAABgAAAAAAAHAAAAEABgAAAAAAAHAAAAcABgAAAAAAAHAAAAgABgAAAAAAAHAAAAkABgAAAAAAAHAAAAoABgAAAAAAAHA=")
+
+[node name="PlayerCharacter" parent="." index="8" instance=ExtResource("2_n8bw1")]
+position = Vector2(332.87, 328.06)
+
+[node name="Background" parent="." index="9" instance=ExtResource("4_ihrw1")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="10"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="StageExit" parent="." index="11" instance=ExtResource("5_awxmh")]
+position = Vector2(597.871, 336.458)
+next_stage_scene = "uid://bkia6v6xkbrgy"
+
+[node name="TimerUI" parent="." index="12" instance=ExtResource("6_rdmma")]
+
+[node name="LevelTimer" parent="." index="13" instance=ExtResource("7_pail8")]
+starting_time = 10.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="14"]
+color = Color(0, 0, 0, 1)
+
+[node name="GameOverUI" parent="." index="15" instance=ExtResource("8_pail8")]
+
+[node name="Label" type="Label" parent="." index="16"]
+offset_left = 296.41
+offset_top = 247.076
+offset_right = 373.41
+offset_bottom = 270.076
+text = "GO RIGHT"

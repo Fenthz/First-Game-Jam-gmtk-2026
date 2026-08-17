@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c55jc1lefmoix"]
+
+[ext_resource type="Script" uid="uid://c7ij8k8lqhjhi" path="res://Stages/LevelTimer.gd" id="1_whlip"]
+
+[node name="LevelTimer" type="Node"]
+script = ExtResource("1_whlip")
+max_time = 50.0
+starting_time = 20.0

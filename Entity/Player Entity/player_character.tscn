@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://cxmapedtw2d6y"]
+
+[ext_resource type="Script" uid="uid://but5mnhj5t0t7" path="res://Entity/Player Entity/player_character_body_2d.gd" id="1_xm5p8"]
+[ext_resource type="Texture2D" uid="uid://cho72a1hitaat" path="res://Assets/PlayerCharacterBall1.png" id="2_ewapc"]
+[ext_resource type="Script" uid="uid://dnb0fnxv62evq" path="res://Entity/Player Entity/PlayerVisionLight.gd" id="3_ewapc"]
+[ext_resource type="Texture2D" uid="uid://ciisga33n5xxe" path="res://Assets/PlayerCharacterBall2.png" id="4_i52du"]
+[ext_resource type="Texture2D" uid="uid://b5lk0r60xmxsj" path="res://Assets/PlayerCharacterBall3.png" id="5_ltiec"]
+[ext_resource type="Texture2D" uid="uid://dblrfl0hr74fy" path="res://Assets/PlayerCharacterBall4.png" id="6_hfgoh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_56fac"]
+radius = 16.2788
+
+[sub_resource type="Gradient" id="Gradient_avuvb"]
+offsets = PackedFloat32Array(0, 0.491582, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.491583, 0.491583, 0.491583, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hc8cy"]
+gradient = SubResource("Gradient_avuvb")
+fill = 1
+fill_from = Vector2(0.504274, 0.487179)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w415o"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ewapc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i52du")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ltiec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hfgoh")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="PlayerCharacter" type="Node2D"]
+
+[node name="PlayerCharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 4
+collision_mask = 123
+slide_on_ceiling = false
+platform_floor_layers = 65
+platform_wall_layers = 2
+script = ExtResource("1_xm5p8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacterBody2D"]
+shape = SubResource("CircleShape2D_56fac")
+
+[node name="PlayerCharacterSprite" type="Sprite2D" parent="PlayerCharacterBody2D"]
+visible = false
+texture = ExtResource("2_ewapc")
+
+[node name="AimIndicator" type="Line2D" parent="PlayerCharacterBody2D"]
+width = 4.0
+default_color = Color(1, 0.178679, 0.247227, 1)
+
+[node name="Camera2D" type="Camera2D" parent="PlayerCharacterBody2D"]
+zoom = Vector2(1.51, 1.51)
+limit_left = 0
+limit_top = 0
+limit_right = 1080
+limit_bottom = 720
+position_smoothing_speed = 10.0
+
+[node name="PlayerVisionLight" type="PointLight2D" parent="PlayerCharacterBody2D"]
+texture = SubResource("GradientTexture2D_hc8cy")
+texture_scale = 0.01
+script = ExtResource("3_ewapc")
+
+[node name="AnimationSprite" type="AnimatedSprite2D" parent="PlayerCharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_w415o")
+animation = &"new_animation"
+frame_progress = 0.491276

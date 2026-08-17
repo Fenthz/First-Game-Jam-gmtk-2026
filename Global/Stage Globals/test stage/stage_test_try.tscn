@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=4 uid="uid://bfmikf6nxdipv"]
+
+[ext_resource type="PackedScene" uid="uid://dicn5nols6a0g" path="res://Global/Stage Globals/base_stage.tscn" id="1_kjccg"]
+[ext_resource type="PackedScene" uid="uid://cxmapedtw2d6y" path="res://Entity/Player Entity/player_character.tscn" id="2_u5dcr"]
+[ext_resource type="PackedScene" uid="uid://cfbh5wthownuf" path="res://Entity/Stage Entity/spike_hazard.tscn" id="3_acrtq"]
+[ext_resource type="PackedScene" uid="uid://xrngnwocicew" path="res://game_over_ui.tscn" id="4_2cdx0"]
+[ext_resource type="PackedScene" uid="uid://cbd3ibpo1mslu" path="res://Global/timer_ui.tscn" id="5_qjn43"]
+[ext_resource type="PackedScene" uid="uid://c55jc1lefmoix" path="res://Global/level_timer.tscn" id="6_0qwgg"]
+
+[node name="Stage_test" instance=ExtResource("1_kjccg")]
+
+[node name="GroundLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAAAABUAAQAAAAEAAAABABUAAQABAAEAAAACABUAAQAAAAEAAAADABUAAQABAAEAAAAEABUAAQAAAAEAAAAFABUAAQABAAEAAAAGABUAAQAAAAEAAAAHABUAAQABAAEAAAAIABUAAQAAAAEAAAAJABUAAQABAAEAAAAKABUAAQAAAAEAAAALABUAAQABAAEAAAAMABUAAQAAAAEAAAANABUAAQABAAEAAAAOABUAAQAAAAEAAAAPABUAAQABAAEAAAAQABUAAQAAAAEAAAARABUAAQABAAEAAAASABUAAQAAAAEAAAATABUAAQABAAEAAAAUABUAAQAAAAEAAAAVABUAAQABAAEAAAAWABUAAQAAAAEAAAAXABUAAQABAAEAAAAYABUAAQAAAAEAAAAZABUAAQABAAEAAAAaABUAAQAAAAEAAAAbABUAAQABAAEAAAAcABUAAQAAAAEAAAAdABUAAQABAAEAAAAeABUAAQAAAAEAAAAfABUAAQABAAEAAAAgABUAAQAAAAEAAAAhABUAAQABAAEAAAAiABUAAQAAAAEAAAAjABUAAQABAAEAAAAkABUAAQAAAAEAAAAlABUAAQABAAEAAAAmABUAAQAAAAEAAAAnABUAAQAAAAEAAAAnABQAAQAAAAEAAGAnABMAAQABAAEAAGAnABIAAQAAAAEAAGAnABEAAQABAAEAAGAnABAAAQAAAAEAAGAnAA8AAQABAAEAAGAnAA4AAQAAAAEAAGAnAA0AAQABAAEAAGAnAAwAAQAAAAEAAGAnAAsAAQABAAEAAGAnAAoAAQAAAAEAAGAnAAkAAQABAAEAAGAnAAgAAQAAAAEAAGAnAAcAAQABAAEAAGAnABYAAQAAAAEAAGAoABUAAQABAAEAAAANAAkAAQAAAAEAAAAOAAkAAQABAAEAAAAXAAkAAQAAAAEAAAAYAAkAAQABAAEAAAAEAAkAAQAAAAEAAAAFAAkAAQABAAEAAAAZAAkAAQAAAAEAAAAaAAkAAQABAAEAAAAPAAkAAQAAAAEAAAAQAAkAAQABAAEAAAAgAAkAAQAAAAEAAAAhAAkAAQABAAEAAAA=")
+
+[node name="IceLayer" parent="." index="1"]
+tile_map_data = PackedByteArray("AAAPABEAAAAAAAEAAAAQABEAAAABAAEAAAARABEAAAAAAAEAAAASABEAAAABAAEAAAATABEAAAAAAAEAAAAUABEAAAABAAEAAAAVABEAAAAAAAEAAAAWABEAAAABAAEAAAAXABEAAAAAAAEAAAAYABEAAAABAAEAAAAZABEAAAAAAAEAAAAaABEAAAABAAEAAAAbABEAAAAAAAEAAAAcABEAAAABAAEAAAAdABEAAAAAAAEAAAAeABEAAAABAAEAAAA=")
+
+[node name="PlayerCharacter" parent="." index="3" instance=ExtResource("2_u5dcr")]
+position = Vector2(271.074, 243.802)
+
+[node name="GameOverUI" parent="." index="4" instance=ExtResource("4_2cdx0")]
+
+[node name="TimerUI" parent="." index="5" instance=ExtResource("5_qjn43")]
+
+[node name="LevelTimer" parent="." index="6" instance=ExtResource("6_0qwgg")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="7"]
+color = Color(0, 0, 0, 1)
+
+[node name="SpikeHazard" parent="." index="8" instance=ExtResource("3_acrtq")]
+position = Vector2(227.365, 276.891)
+
+[node name="SpikeHazard2" parent="." index="9" instance=ExtResource("3_acrtq")]
+position = Vector2(175.597, 259.365)

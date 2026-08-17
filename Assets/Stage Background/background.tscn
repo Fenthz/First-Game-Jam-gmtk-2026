@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://by0gm5voo034x"]
+
+[ext_resource type="Texture2D" uid="uid://breagya6ltw4l" path="res://Assets/Stage Background/Layer_0010_1.png" id="1_36nng"]
+[ext_resource type="Texture2D" uid="uid://rkenp6x6yafw" path="res://Assets/Stage Background/Layer_0011_0.png" id="2_5uf1c"]
+[ext_resource type="Texture2D" uid="uid://0g2da7i8fu31" path="res://Assets/Stage Background/Layer_0008_3.png" id="3_nnb46"]
+[ext_resource type="Texture2D" uid="uid://m4y4en4xnhip" path="res://Assets/Stage Background/Layer_0000_9.png" id="4_anprg"]
+[ext_resource type="Texture2D" uid="uid://dl0qpr1e3xtcd" path="res://Assets/Stage Background/Layer_0005_5.png" id="5_5hcpp"]
+[ext_resource type="Texture2D" uid="uid://bbjj6jfx850j6" path="res://Assets/Stage Background/Layer_0002_7.png" id="6_uqoja"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_36nng"]
+
+[node name="Background" type="CanvasLayer"]
+layer = -4
+follow_viewport_enabled = true
+
+[node name="Sky" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_36nng")
+offset_left = -136.727
+offset_top = -314.568
+offset_right = 791.273
+offset_bottom = 478.432
+texture = ExtResource("1_36nng")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_36nng")
+offset_left = -135.028
+offset_top = -338.159
+offset_right = 792.972
+offset_bottom = 454.841
+texture = ExtResource("2_5uf1c")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_36nng")
+offset_left = -126.786
+offset_top = -451.012
+offset_right = 801.214
+offset_bottom = 341.988
+texture = ExtResource("3_nnb46")
+
+[node name="DArk Grass" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_36nng")
+offset_left = -139.567
+offset_top = -471.168
+offset_right = 788.433
+offset_bottom = 321.832
+texture = ExtResource("4_anprg")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_36nng")
+offset_left = -117.111
+offset_top = -450.639
+offset_right = 810.889
+offset_bottom = 342.361
+texture = ExtResource("5_5hcpp")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_36nng")
+offset_left = -142.997
+offset_top = 73.0235
+offset_right = 785.003
+offset_bottom = 866.024
+texture = ExtResource("6_uqoja")

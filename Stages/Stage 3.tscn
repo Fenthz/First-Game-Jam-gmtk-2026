@@ -1,0 +1,159 @@
+[gd_scene load_steps=12 format=4 uid="uid://cvt14p7x04adf"]
+
+[ext_resource type="PackedScene" uid="uid://dicn5nols6a0g" path="res://Global/Stage Globals/base_stage.tscn" id="1_b1qn6"]
+[ext_resource type="PackedScene" uid="uid://r26jwxqh8j4o" path="res://Global/Stage Globals/slanted walls.tscn" id="2_6gp8a"]
+[ext_resource type="TileSet" uid="uid://cr8dy3e0beux7" path="res://Global/Stage Globals/MainTileSet.tres" id="2_mc6nv"]
+[ext_resource type="PackedScene" uid="uid://cxmapedtw2d6y" path="res://Entity/Player Entity/player_character.tscn" id="3_t43t7"]
+[ext_resource type="PackedScene" uid="uid://cfbh5wthownuf" path="res://Entity/Stage Entity/spike_hazard.tscn" id="5_kc44g"]
+[ext_resource type="PackedScene" uid="uid://by0gm5voo034x" path="res://Assets/Stage Background/background.tscn" id="6_kc44g"]
+[ext_resource type="PackedScene" uid="uid://cbd3ibpo1mslu" path="res://Global/timer_ui.tscn" id="7_7urpo"]
+[ext_resource type="PackedScene" uid="uid://c55jc1lefmoix" path="res://Global/level_timer.tscn" id="8_78s4u"]
+[ext_resource type="PackedScene" uid="uid://xrngnwocicew" path="res://game_over_ui.tscn" id="9_78s4u"]
+[ext_resource type="PackedScene" uid="uid://d4d5odg8k6kg2" path="res://Entity/Stage Entity/Torch.tscn" id="10_f5l3a"]
+[ext_resource type="PackedScene" uid="uid://eayp0f053q1n" path="res://Global/Stage Globals/stage_exit.tscn" id="11_cpf4c"]
+
+[node name="BaseStage" instance=ExtResource("1_b1qn6")]
+
+[node name="GroundLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAAAAAEAAwAAAAAAAAABAAEAAwAAAAAAAAACAAEAAwAAAAAAAAADAAEAAwAAAAAAAAAEAAEAAwAAAAAAAAAFAAEAAwAAAAAAAAAGAAEAAwAAAAAAAAAHAAEAAwAAAAAAAAAIAAEAAwAAAAAAAAAJAAEAAwAAAAAAAAAPAAQAAwAAAAAAAAAJAAQAAwAAAAAAAAAIAAQAAwAAAAAAAAAHAAQAAwAAAAAAAAAGAAQAAwAAAAAAAAAFAAQAAwAAAAAAAAAAAAQAAwAAAAAAAAABAAQAAwAAAAAAAAAOAAoAAwAAAAAAAAAPAAoAAwAAAAAAAAAQAAoAAwAAAAAAAAARAAoAAwAAAAAAAAASAAoAAwAAAAAAAAATAAoAAwAAAAAAAAAAAAAABgAAAAAAACABAAAABgAAAAAAACACAAAABgAAAAAAACADAAAABgAAAAAAACAEAAAABgAAAAAAACAFAAAABgAAAAAAACAGAAAABgAAAAAAACAHAAAABgAAAAAAACAIAAAABgAAAAAAACAJAAAABgAAAAAAACAKAAAABgAAAAAAACALAAAABgAAAAAAACAMAAAABgAAAAAAACANAAAABgAAAAAAACAOAAAABgAAAAAAACAPAAAABgAAAAAAACAQAAAABgAAAAAAACARAAAABgAAAAAAACASAAAABgAAAAAAACATAAAABgAAAAAAACA=")
+
+[node name="IceLayer" parent="." index="1"]
+tile_map_data = PackedByteArray("AAACAAcABAAAAAAAAAAGAAgABAAAAAAAAAADAAcABAAAAAAAAAAHAAgABAAAAAAAAAAKAAkABAAAAAAAAAALAAkABAAAAAAAAAAMAAkABAAAAAAAAAA=")
+
+[node name="HazardLayer" parent="." index="2"]
+visible = false
+tile_map_data = PackedByteArray("AAAJAAYABQAAAAAAAAAKAAYABQAAAAAAAAALAAYABQAAAAAAAAAMAAYABQAAAAAAAAANAAYABQAAAAAAAAAOAAYABQAAAAAAAAAPAAYABQAAAAAAAAAIAAYABQAAAAAAAAAAAAoABQAAAAAAAAABAAoABQAAAAAAAAACAAoABQAAAAAAAAADAAoABQAAAAAAAAAEAAoABQAAAAAAAAAFAAoABQAAAAAAAAAGAAoABQAAAAAAAAAHAAoABQAAAAAAAAAIAAoABQAAAAAAAAAJAAoABQAAAAAAAAAKAAoABQAAAAAAAAALAAoABQAAAAAAAAAMAAoABQAAAAAAAAANAAoABQAAAAAAAAA=")
+
+[node name="WallLayer" parent="." index="3"]
+tile_map_data = PackedByteArray("AAATAAoABgAAAAAAAGATAAkABgAAAAAAAGATAAgABgAAAAAAAGATAAcABgAAAAAAAGATAAYABgAAAAAAAGATAAUABgAAAAAAAGATAAQABgAAAAAAAGATAAMABgAAAAAAAGATAAIABgAAAAAAAGATAAEABgAAAAAAAGATAAAABgAAAAAAAGAAAAoABgAAAAAAAFAAAAsABgAAAAAAAFAAAAkABgAAAAAAAFAAAAgABgAAAAAAAFAAAAcABgAAAAAAAFAAAAYABgAAAAAAAFAAAAUABgAAAAAAAFAAAAQABgAAAAAAAFAAAAMABgAAAAAAAFAAAAIABgAAAAAAAFAAAAEABgAAAAAAAFAAAAAABgAAAAAAAFA=")
+
+[node name="WallLayer2" type="TileMapLayer" parent="." index="4"]
+tile_map_data = PackedByteArray("AAATAAoABgAAAAAAAGATAAkABgAAAAAAAGATAAgABgAAAAAAAGATAAcABgAAAAAAAGATAAYABgAAAAAAAGATAAUABgAAAAAAAGATAAQABgAAAAAAAGATAAMABgAAAAAAAGATAAIABgAAAAAAAGATAAEABgAAAAAAAGATAAAABgAAAAAAAGAAAAoABgAAAAAAAFAAAAsABgAAAAAAAFAAAAkABgAAAAAAAFAAAAgABgAAAAAAAFAAAAcABgAAAAAAAFAAAAYABgAAAAAAAFAAAAUABgAAAAAAAFAAAAQABgAAAAAAAFAAAAMABgAAAAAAAFAAAAIABgAAAAAAAFAAAAEABgAAAAAAAFAAAAAABgAAAAAAAFA=")
+tile_set = ExtResource("2_mc6nv")
+
+[node name="Node2D2" parent="." index="5" instance=ExtResource("2_6gp8a")]
+z_index = 2
+position = Vector2(531.016, 143.415)
+rotation = -0.301942
+scale = Vector2(1.515, 1.515)
+
+[node name="Node2D6" parent="." index="6" instance=ExtResource("2_6gp8a")]
+z_index = 2
+position = Vector2(436.184, 59.673)
+scale = Vector2(1.515, 1.515)
+
+[node name="Node2D3" parent="." index="7" instance=ExtResource("2_6gp8a")]
+z_index = 2
+position = Vector2(599.944, 99.7799)
+rotation = -0.684169
+scale = Vector2(1.475, 1.475)
+
+[node name="Node2D5" parent="." index="8" instance=ExtResource("2_6gp8a")]
+z_index = 2
+position = Vector2(612.982, 66.5931)
+rotation = -1.26362
+scale = Vector2(1.905, 1.905)
+
+[node name="Node2D4" parent="." index="9" instance=ExtResource("2_6gp8a")]
+z_index = 2
+position = Vector2(567.142, 126.301)
+rotation = -0.616101
+scale = Vector2(1.35, 1.35)
+
+[node name="PlayerCharacter" parent="." index="10" instance=ExtResource("3_t43t7")]
+position = Vector2(36.7839, 40.482)
+
+[node name="SpikeHazard" parent="." index="11" instance=ExtResource("5_kc44g")]
+position = Vector2(324.301, 178.638)
+rotation = 1.11003
+scale = Vector2(1.5, 1.5)
+
+[node name="SpikeHazard2" parent="." index="12" instance=ExtResource("5_kc44g")]
+position = Vector2(345.447, 202.391)
+rotation = 0.614356
+scale = Vector2(1.5, 1.5)
+
+[node name="SpikeHazard3" parent="." index="13" instance=ExtResource("5_kc44g")]
+position = Vector2(434.084, 211.081)
+scale = Vector2(1.5, 1.5)
+
+[node name="SpikeHazard5" parent="." index="14" instance=ExtResource("5_kc44g")]
+z_index = 2
+position = Vector2(101.026, 314.387)
+scale = Vector2(7.85, 7.85)
+
+[node name="SpikeHazard9" parent="." index="15" instance=ExtResource("5_kc44g")]
+position = Vector2(292.762, 315.213)
+scale = Vector2(7.85, 7.85)
+
+[node name="SpikeHazard4" parent="." index="16" instance=ExtResource("5_kc44g")]
+position = Vector2(372.096, 211.081)
+scale = Vector2(1.5, 1.5)
+
+[node name="SpikeHazard7" parent="." index="17" instance=ExtResource("5_kc44g")]
+position = Vector2(406.856, 211.37)
+scale = Vector2(1.5, 1.5)
+
+[node name="SpikeHazard11" parent="." index="18" instance=ExtResource("5_kc44g")]
+position = Vector2(16.6513, 186.034)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+
+[node name="SpikeHazard12" parent="." index="19" instance=ExtResource("5_kc44g")]
+position = Vector2(16.6513, 223.98)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+
+[node name="SpikeHazard13" parent="." index="20" instance=ExtResource("5_kc44g")]
+position = Vector2(17.2306, 261.926)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+
+[node name="SpikeHazard14" parent="." index="21" instance=ExtResource("5_kc44g")]
+position = Vector2(16.3616, 300.451)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+
+[node name="SpikeHazard15" parent="." index="22" instance=ExtResource("5_kc44g")]
+z_index = 1
+position = Vector2(16.3616, 338.687)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+
+[node name="SpikeHazard10" parent="." index="23" instance=ExtResource("5_kc44g")]
+position = Vector2(417.458, 333.086)
+scale = Vector2(2.55, 2.55)
+
+[node name="SpikeHazard6" parent="." index="24" instance=ExtResource("5_kc44g")]
+position = Vector2(459.864, 202.97)
+rotation = -0.684169
+scale = Vector2(1.5, 1.5)
+
+[node name="SpikeHazard8" parent="." index="25" instance=ExtResource("5_kc44g")]
+position = Vector2(476.375, 180.376)
+rotation = -1.29678
+scale = Vector2(1.5, 1.5)
+
+[node name="Background" parent="." index="26" instance=ExtResource("6_kc44g")]
+
+[node name="TimerUI" parent="." index="27" instance=ExtResource("7_7urpo")]
+
+[node name="LevelTimer" parent="." index="28" instance=ExtResource("8_78s4u")]
+
+[node name="GameOverUI" parent="." index="29" instance=ExtResource("9_78s4u")]
+
+[node name="Torch" parent="." index="30" instance=ExtResource("10_f5l3a")]
+position = Vector2(436.218, 55.6868)
+
+[node name="Torch2" parent="." index="31" instance=ExtResource("10_f5l3a")]
+position = Vector2(40.9808, 143.433)
+
+[node name="Torch3" parent="." index="32" instance=ExtResource("10_f5l3a")]
+position = Vector2(486.306, 336.043)
+
+[node name="StageExit" parent="." index="33" instance=ExtResource("11_cpf4c")]
+position = Vector2(603.264, 335.658)
+next_stage_scene = "uid://csdhn0tseqeol"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="34"]
+color = Color(0, 0, 0, 1)

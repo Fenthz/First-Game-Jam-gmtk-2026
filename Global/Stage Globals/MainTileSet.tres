@@ -1,0 +1,42 @@
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://cr8dy3e0beux7"]
+
+[ext_resource type="Texture2D" uid="uid://dmaomuodes7h8" path="res://Assets/IceyFloor.png" id="1_hwen7"]
+[ext_resource type="Texture2D" uid="uid://dsxl1s84fyk0o" path="res://Assets/RealFloor.png" id="2_xv551"]
+[ext_resource type="Texture2D" uid="uid://bwyrh31ial6jo" path="res://Assets/SpikeHazard.png" id="3_tl5bv"]
+[ext_resource type="Texture2D" uid="uid://ccv4bs03ql1ve" path="res://Assets/Walls.png" id="4_xv551"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4bxx2"]
+texture = ExtResource("2_xv551")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -8)
+0:0/0/z_index = 1
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, 13.5385, 16, 13.5385, 16, 24, -16, 24)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwen7"]
+texture = ExtResource("1_hwen7")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 5.5, 16, 5.5, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xv551"]
+texture = ExtResource("3_tl5bv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tl5bv"]
+texture = ExtResource("4_xv551")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, 5.5, 16, 5.5, 16, 16, -16, 16)
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 64
+physics_layer_0/collision_mask = 0
+physics_layer_1/collision_layer = 1
+physics_layer_1/collision_mask = 0
+sources/3 = SubResource("TileSetAtlasSource_4bxx2")
+sources/4 = SubResource("TileSetAtlasSource_hwen7")
+sources/5 = SubResource("TileSetAtlasSource_xv551")
+sources/6 = SubResource("TileSetAtlasSource_tl5bv")
